@@ -204,14 +204,14 @@ class OrderController extends Controller
         $order->save();
 
         //Update Transaction
-        if ($request->payment_status == 'paid' && $previous_payment_status != 'paid') {
-            $transaction                 = new Transaction();
-            $transaction->order_id       = $order->id;
-            $transaction->transaction_id = $request->transaction_id;
-            $transaction->payment_method = $request->payment_method;
-            $transaction->amount         = $order->total;
-            $transaction->save();
-        }
+        // if ($request->payment_status == 'paid' && $previous_payment_status != 'paid') {
+        //     $transaction                 = new Transaction();
+        //     $transaction->order_id       = $order->id;
+        //     $transaction->transaction_id = $request->transaction_id;
+        //     $transaction->payment_method = $request->payment_method;
+        //     $transaction->amount         = $order->total;
+        //     $transaction->save();
+        // }
 
         if ($order->delivery_status != $previous_delivery_status) {
             //Trigger Order Status Changed Event
