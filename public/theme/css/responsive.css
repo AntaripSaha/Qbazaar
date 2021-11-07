@@ -1,0 +1,142 @@
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .offer-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .flex-item {
+    width: 25%;
+  }
+  .offer-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .flex-item {
+    width: 33.33%;
+  }
+  .offer-item .offer-banner {
+    height: auto;
+    width: 100%;
+  }
+  .offer-item .btn {
+    display: block;
+    width: 100%;
+  }
+  .offer-item .btn-cart {
+    margin-bottom: 10px;
+  }
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .container-fluid {
+    width: 100%;
+  }
+  .banner-content {
+    min-height: 180px;
+    background-repeat: no-repeat !important;
+    width: 100%;
+    background-size: cover !important;
+  }
+  .left-header {
+    width: auto;
+  }
+  .section {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+  .section-heading {
+    margin-bottom: 60px;
+  }
+  #content {
+    margin-left: 0px;
+  }
+  #content-area.mobile-nav #sidebar {
+    margin-left: -250px;
+  }
+  #home-search > button {
+    padding: 8px 14px;
+  }
+  #bottom-navigation {
+    display: block;
+  }
+  #filter-accordion {
+    display: block;
+  }
+  #filter-accordion-content {
+    display: none;
+    background: #efefef;
+    padding: 20px 20px;
+  }
+  .sticky {
+    position: inherit;
+    width: inherit;
+    z-index: inherit;
+    box-shadow: inherit;
+  }
+  .shopping_cart {
+    width: 100%;
+  }
+  .shopping_cart_inner {
+    height: 100%;
+    padding: 0px 20px;
+  }
+  .shopping_cart.shopping_cart_on {
+    right: 0px;
+  }
+  #productDetailsModal .product-qnt {
+    width: 100%;
+  }
+  #productDetailsModal .btn-cart {
+    width: 100%;
+    display: block;
+  }
+  .banner-content h2 {
+    font-size: 18px;
+  }
+  .flex-item {
+    width: 50%;
+    margin: 0;
+  }
+  .btn-send {
+    width: 100%;
+  }
+  .offer-item .offer-banner {
+    height: auto;
+    width: 100%;
+  }
+  .offer-item .btn {
+    display: block;
+    width: 100%;
+  }
+  .offer-item .btn-cart {
+    margin-bottom: 10px;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .offer-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .offer-item .offer-banner {
+    height: auto;
+    width: 100%;
+  }
+  .offer-item .btn {
+    display: block;
+    width: 100%;
+  }
+  .offer-item .btn-cart {
+    margin-bottom: 10px;
+  }
+}

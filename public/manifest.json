@@ -1,0 +1,19 @@
+{
+    "name": "Green Store",
+    "short_name": "Green Store",
+    "icons": [
+        {
+            "src": "/theme/img/app-luncher.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#fafafa",
+    "theme_color": "#68a728",
+    "description": "Multipurpose Grocerry and Medicine Shop",
+    "dir": "ltr",
+    "lang": "en-US"
+}
