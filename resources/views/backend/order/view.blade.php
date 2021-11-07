@@ -29,11 +29,11 @@
 											<span>{{ _lang('Payment Method') }}</span>
 											<strong>{{ strtoupper(str_replace('_',' ',$order->payment_method)) }}</strong>
 
-											<span><u>{{ _lang('Transaction ID') }}</u></span>
+											<!-- <span><u>{{ _lang('Transaction ID') }}</u></span>
 											<strong>{{ $order->transaction->transaction_id }}</strong>
 
 											<span>{{ _lang('Payment Date') }}</span>
-											<strong>{{ $order->transaction->created_at }}</strong>
+											<strong>{{ $order->transaction->created_at }}</strong> -->
 										</div>
 									</div>
 								</div>
