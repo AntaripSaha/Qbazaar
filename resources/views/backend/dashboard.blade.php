@@ -5,6 +5,7 @@
 @php $user_type = Auth::user()->user_type; @endphp
 
 <link rel="stylesheet" href="{{ asset('backend/plugins/chartJs/Chart.min.css') }}">
+<!-- <div id="google_translate_element"> Translate   </div> -->
 
 <div class="row">
     @if (in_array('dashboard.order_processing_widget',$permissions) || $user_type == 'admin')
@@ -100,28 +101,28 @@
                 </thead>
                 <tbody>
                     @foreach($recent_orders as $recent_order)
-                        <tr>
-                            <td>{{ $recent_order->id }}</td>
-                            <td>{{ $recent_order->customer_name }}</td>
-                            <td>{{ $recent_order->customer_email }}</td>
-                            <td>{{ $recent_order->customer_phone }}</td>
-                            <td>{!! xss_clean($recent_order->getDeliveryStatus()) !!}</td>
-                            <td>{!! xss_clean($recent_order->getPaymentStatus()) !!}</td>
-                            <td>{!! xss_clean(decimalPlace($recent_order->total, $recent_order->currency)) !!}</td>
-                            <td class="text-center">
-                                <div class="dropdown">
-                                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">{{ _lang('Action') }}</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ action('OrderController@show', $recent_order->id) }}"><i class="icofont-eye-alt"></i> {{ _lang('View') }}</a>
-                                        <form action="{{ action('OrderController@destroy', $recent_order['id']) }}" method="post">
-                                            @csrf
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button class="button-link btn-remove" type="submit"><i class="icofont-ui-delete"></i> {{ _lang('Delete') }}</button>
-                                        </form>
-                                    </div>
+                    <tr>
+                        <td>{{ $recent_order->id }}</td>
+                        <td>{{ $recent_order->customer_name }}</td>
+                        <td>{{ $recent_order->customer_email }}</td>
+                        <td>{{ $recent_order->customer_phone }}</td>
+                        <td>{!! xss_clean($recent_order->getDeliveryStatus()) !!}</td>
+                        <td>{!! xss_clean($recent_order->getPaymentStatus()) !!}</td>
+                        <td>{!! xss_clean(decimalPlace($recent_order->total, $recent_order->currency)) !!}</td>
+                        <td class="text-center">
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">{{ _lang('Action') }}</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ action('OrderController@show', $recent_order->id) }}"><i class="icofont-eye-alt"></i> {{ _lang('View') }}</a>
+                                    <form action="{{ action('OrderController@destroy', $recent_order['id']) }}" method="post">
+                                        @csrf
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <button class="button-link btn-remove" type="submit"><i class="icofont-ui-delete"></i> {{ _lang('Delete') }}</button>
+                                    </form>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -133,6 +134,7 @@
 @endsection
 
 @section('js-script')
+
 <script src="{{ asset('backend/plugins/chartJs/Chart.min.js') }}" crossorigin="anonymous"></script>
 <script src="{{ asset('backend/assets/js/dashboard.js') }}"></script>
 @endsection
