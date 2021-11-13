@@ -39,7 +39,7 @@
             </div>
 
             <!-- google translator start -->
-            <Google />
+            <div><GoogleTrans /></div>
             <!-- google translator End -->
 
             <div class="right-header ml-lg-2">
@@ -109,7 +109,6 @@ import EventHub from "./components/EventHub.vue";
 import Footer from "./components/Footer.vue";
 import ShoppingCart from "./components/ShoppingCart.vue";
 import Sidebar from "./components/Sidebar.vue";
-import Google from "./components/GoogleTrans.vue";
 
 export default {
   name: "App",
@@ -118,7 +117,6 @@ export default {
     Sidebar,
     ShoppingCart,
     Footer,
-    Google,
   },
   computed: {
     isLoggedIn: function () {

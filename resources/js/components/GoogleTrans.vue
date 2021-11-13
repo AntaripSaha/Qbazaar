@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 id="google_translate_element"></h1>
+    <div id="google_translate_element"></div>
   </div>
 </template>
 

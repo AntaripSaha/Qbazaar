@@ -17,6 +17,8 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import vSelect from "vue-select";
 import VModal from "vue-js-modal";
 
+
+
 window.Vue = require("vue");
 Vue.prototype.$eventHub = new Vue();
 Vue.prototype.$http = axios;
@@ -66,6 +68,14 @@ store.dispatch("settings/getSettings").then(() => {
 //Global UI Components
 Vue.component("SpinnerButton", SpinnerButtonComponent);
 Vue.component("v-select", vSelect);
+
+
+
+// Google Translator Global
+import GoogleTrans from "./components/GoogleTrans.vue";
+Vue.component('GoogleTrans', GoogleTrans);
+
+
 
 const token = localStorage.getItem("token");
 if (token) {

@@ -2069,7 +2069,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Footer.vue */ "./resources/js/components/Footer.vue");
 /* harmony import */ var _components_ShoppingCart_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ShoppingCart.vue */ "./resources/js/components/ShoppingCart.vue");
 /* harmony import */ var _components_Sidebar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Sidebar.vue */ "./resources/js/components/Sidebar.vue");
-/* harmony import */ var _components_GoogleTrans_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/GoogleTrans.vue */ "./resources/js/components/GoogleTrans.vue");
 //
 //
 //
@@ -2176,7 +2175,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 
@@ -2187,8 +2185,7 @@ __webpack_require__.r(__webpack_exports__);
     EventHub: _components_EventHub_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Sidebar: _components_Sidebar_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     ShoppingCart: _components_ShoppingCart_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Footer: _components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Google: _components_GoogleTrans_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    Footer: _components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   computed: {
     isLoggedIn: function isLoggedIn() {
@@ -6361,6 +6358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
 /* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_GoogleTrans_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/GoogleTrans.vue */ "./resources/js/components/GoogleTrans.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -6419,7 +6417,10 @@ _store__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch("settings/getSettings").
 }); //Global UI Components
 
 vue__WEBPACK_IMPORTED_MODULE_12__["default"].component("SpinnerButton", _components_SpinnerButton_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_12__["default"].component("v-select", (vue_select__WEBPACK_IMPORTED_MODULE_10___default()));
+vue__WEBPACK_IMPORTED_MODULE_12__["default"].component("v-select", (vue_select__WEBPACK_IMPORTED_MODULE_10___default())); // Google Translator Global
+
+
+vue__WEBPACK_IMPORTED_MODULE_12__["default"].component('GoogleTrans', _components_GoogleTrans_vue__WEBPACK_IMPORTED_MODULE_13__["default"]);
 var token = localStorage.getItem("token");
 
 if (token) {
@@ -87544,164 +87545,155 @@ var render = function() {
           _c("header", [
             _c("div", { staticClass: "main-menu-area" }, [
               _c("div", { staticClass: "container-fluid" }, [
-                _c(
-                  "div",
-                  { staticClass: "d-flex align-items-center" },
-                  [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "search-area flex-grow-1" }, [
-                      _c("div", { staticClass: "home-search" }, [
-                        _c("input", {
-                          attrs: {
-                            type: "text",
-                            name: "search",
-                            id: "search",
-                            autocomplete: "off",
-                            placeholder: "Search Products"
-                          },
-                          domProps: { value: _vm.keyword },
-                          on: {
-                            keyup: function($event) {
-                              return _vm.searchProduct($event)
-                            }
+                _c("div", { staticClass: "d-flex align-items-center" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "search-area flex-grow-1" }, [
+                    _c("div", { staticClass: "home-search" }, [
+                      _c("input", {
+                        attrs: {
+                          type: "text",
+                          name: "search",
+                          id: "search",
+                          autocomplete: "off",
+                          placeholder: "Search Products"
+                        },
+                        domProps: { value: _vm.keyword },
+                        on: {
+                          keyup: function($event) {
+                            return _vm.searchProduct($event)
                           }
-                        }),
-                        _vm._v(" "),
-                        _vm._m(1)
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("Google"),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "right-header ml-lg-2" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "menu-extra float-right d-none d-lg-inline-block"
-                          },
-                          [
-                            _c("ul", [
-                              _vm.isLoggedIn
-                                ? _c(
-                                    "li",
-                                    [
-                                      _c(
-                                        "router-link",
-                                        { attrs: { to: { name: "profile" } } },
-                                        [
-                                          _c("i", {
-                                            staticClass: "icofont-ui-user"
-                                          }),
-                                          _vm._v(
-                                            "\n                    " +
-                                              _vm._s(_vm.$lang["Account"])
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.isLoggedIn
-                                ? _c("li", [
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(1)
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_c("GoogleTrans")], 1),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "right-header ml-lg-2" },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "menu-extra float-right d-none d-lg-inline-block"
+                        },
+                        [
+                          _c("ul", [
+                            _vm.isLoggedIn
+                              ? _c(
+                                  "li",
+                                  [
                                     _c(
-                                      "a",
-                                      {
-                                        staticClass: "btn-signin",
-                                        attrs: { href: "#" },
-                                        on: { click: _vm.logout }
-                                      },
+                                      "router-link",
+                                      { attrs: { to: { name: "profile" } } },
                                       [
                                         _c("i", {
-                                          staticClass: "icofont-exit"
+                                          staticClass: "icofont-ui-user"
                                         }),
                                         _vm._v(
-                                          " " + _vm._s(_vm.$lang["Logout"])
+                                          "\n                    " +
+                                            _vm._s(_vm.$lang["Account"])
                                         )
                                       ]
                                     )
-                                  ])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              !_vm.isLoggedIn
-                                ? _c(
-                                    "li",
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.isLoggedIn
+                              ? _c("li", [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "btn-signin",
+                                      attrs: { href: "#" },
+                                      on: { click: _vm.logout }
+                                    },
                                     [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "btn-signup",
-                                          attrs: {
-                                            to: { name: "register" },
-                                            exact: ""
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "icofont-user-alt-7"
-                                          }),
-                                          _vm._v(
-                                            "\n                    " +
-                                              _vm._s(_vm.$lang["Sign Up"])
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
+                                      _c("i", { staticClass: "icofont-exit" }),
+                                      _vm._v(" " + _vm._s(_vm.$lang["Logout"]))
+                                    ]
                                   )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              !_vm.isLoggedIn
-                                ? _c(
-                                    "li",
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "btn-signin",
-                                          attrs: {
-                                            to: { name: "login" },
-                                            exact: ""
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "icofont-sign-in"
-                                          }),
-                                          _vm._v(
-                                            "\n                    " +
-                                              _vm._s(_vm.$lang["Sign In"])
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                : _vm._e()
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "btn btn-action btn-sm d-lg-none ml-2",
-                            attrs: { to: { name: "profile" } }
-                          },
-                          [_c("i", { staticClass: "icofont-ui-user" })]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !_vm.isLoggedIn
+                              ? _c(
+                                  "li",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "btn-signup",
+                                        attrs: {
+                                          to: { name: "register" },
+                                          exact: ""
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "icofont-user-alt-7"
+                                        }),
+                                        _vm._v(
+                                          "\n                    " +
+                                            _vm._s(_vm.$lang["Sign Up"])
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            !_vm.isLoggedIn
+                              ? _c(
+                                  "li",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "btn-signin",
+                                        attrs: {
+                                          to: { name: "login" },
+                                          exact: ""
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "icofont-sign-in"
+                                        }),
+                                        _vm._v(
+                                          "\n                    " +
+                                            _vm._s(_vm.$lang["Sign In"])
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-action btn-sm d-lg-none ml-2",
+                          attrs: { to: { name: "profile" } }
+                        },
+                        [_c("i", { staticClass: "icofont-ui-user" })]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
             ])
           ]),
@@ -88702,7 +88694,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", { attrs: { id: "google_translate_element" } })])
+    return _c("div", [_c("div", { attrs: { id: "google_translate_element" } })])
   }
 ]
 render._withStripped = true
