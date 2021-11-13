@@ -38,6 +38,10 @@
               </div>
             </div>
 
+            <!-- google translator start -->
+            <Google />
+            <!-- google translator End -->
+
             <div class="right-header ml-lg-2">
               <div class="menu-extra float-right d-none d-lg-inline-block">
                 <ul>
@@ -85,7 +89,6 @@
         </div>
       </div>
     </header>
-
     <ShoppingCart />
 
     <div id="content-area" class="mobile-nav">
@@ -106,13 +109,16 @@ import EventHub from "./components/EventHub.vue";
 import Footer from "./components/Footer.vue";
 import ShoppingCart from "./components/ShoppingCart.vue";
 import Sidebar from "./components/Sidebar.vue";
+import Google from "./components/GoogleTrans.vue";
 
 export default {
+  name: "App",
   components: {
     EventHub,
     Sidebar,
     ShoppingCart,
     Footer,
+    Google,
   },
   computed: {
     isLoggedIn: function () {

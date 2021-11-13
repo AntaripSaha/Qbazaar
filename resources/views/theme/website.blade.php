@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" value="{{ csrf_token() }}" />
@@ -25,14 +26,50 @@
 	@if(get_option('stripe_active','No') == 'Yes')
 	<script src="https://js.stripe.com/v3/"></script>
 	@endif
-
+    <!-- Google Translator Css Start -->
+    <style>
+      .translated-ltr {
+        margin-top: -40px;
+      }
+    
+      .translated-ltr {
+        margin-top: -40px;
+      }
+    
+      .goog-te-banner-frame {
+        display: none;
+        margin-top: -20px;
+      }
+    
+      .goog-logo-link {
+        display: none !important;
+      }
+    
+      .goog-te-gadget {
+        color: transparent !important;
+      }
+    </style>
+    <!-- Google Translator Css End -->
 </head>
 
 <body>
+    
     <div id="app"></div>
-
     <script src="{{ mix('theme/js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('theme/js/main.js') }}"></script>
 </body>
 
 </html>
+
+<!-- Google Trasnlator Script Start -->
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Google Trasnlator Script End -->
