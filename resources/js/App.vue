@@ -38,6 +38,10 @@
               </div>
             </div>
 
+            <!-- google translator start -->
+            <div><GoogleTrans /></div>
+            <!-- google translator End -->
+
             <div class="right-header ml-lg-2">
               <div class="menu-extra float-right d-none d-lg-inline-block">
                 <ul>
@@ -85,7 +89,6 @@
         </div>
       </div>
     </header>
-
     <ShoppingCart />
 
     <div id="content-area" class="mobile-nav">
@@ -108,6 +111,7 @@ import ShoppingCart from "./components/ShoppingCart.vue";
 import Sidebar from "./components/Sidebar.vue";
 
 export default {
+  name: "App",
   components: {
     EventHub,
     Sidebar,

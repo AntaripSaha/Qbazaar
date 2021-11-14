@@ -38,6 +38,19 @@
 
 		@include('layouts.others.languages')
 
+		<!-- Google Translator Css Start -->
+		<style>
+				.translated-ltr{margin-top:-40px;}
+				.translated-ltr{margin-top:-40px;}
+				.goog-te-banner-frame {display: none;margin-top:-20px;}
+				.goog-logo-link {
+				display:none !important;
+				} 
+				.goog-te-gadget{
+				color: transparent !important;
+				}
+		</style>
+		<!-- Google Translator Css End -->
     </head>
 
     <body class="sb-nav-fixed">
@@ -94,6 +107,14 @@
                     </div>
 				</button>
 
+			<!-- Google Translator Start -->
+
+							<div>
+								<div id="google_translate_element"></div>
+							</div>
+			<!-- Google Translator End -->
+						
+
 				<ul class="navbar-nav ml-auto ml-md-0">
 					<li class="nav-item dropdown animate-dropdown">
 						<a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icofont-ui-user"></i> {{ Auth::user()->name }}</a>
@@ -146,6 +167,16 @@
 			</div>	<!--End layoutSidenav_content-->
 		</div> <!--End layoutSidenav-->
 
+<!-- translator scripts Start -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en'
+        }, 'google_translate_element');
+    }
+</script>
+<!-- translator scripts End-->
 
 		<!-- Core Js  -->
 		<script src="{{ asset('backend/assets/js/jquery-3.6.0.min.js') }}"></script>

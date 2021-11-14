@@ -24,6 +24,7 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        
         $categorys = Category::all()->sortByDesc("id");
         return view('backend.category.list', compact('categorys'));
     }
